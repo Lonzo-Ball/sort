@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdlib.h>
+
 
 void swap(int* x,int* y)
 {
@@ -6,7 +8,6 @@ void swap(int* x,int* y)
 	*x = *y;
 	*y = t;
 }
-
 //插入排序
 void InsertSort(int a[],int n)
 {
@@ -18,16 +19,20 @@ void InsertSort(int a[],int n)
 		}
 	}
 }
-
 int main(){
 	
-	int a[] = {10,-1,5,9,-44,-98,56,0,0,111};
-	int size = sizeof(a)/sizeof(a[0]);
+	srand(time(NULL));
+	int N = 100;
+	int *a = new int[N];
+	for(int i = 0;i < N;++i)
+	{
+		a[i] = rand()%500;
+	}
 	
 	//插入排序
-	InsertSort(a,size);
+	InsertSort(a,N);
 
-	for(int i = 0;i < size;++i){
+	for(int i = 0;i < N;++i){
 		std::cout<< a[i] << "  ";
 	}
 	std::cout<<std::endl;
