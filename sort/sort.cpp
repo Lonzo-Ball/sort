@@ -100,6 +100,8 @@ void HeapSort(int *a,int n)
 }
 
 //5. 冒泡排序
+//时间复杂度：O(N^2) O(N) O(N^2)
+//稳定性：稳定
 void BubbleSort(int *a,int n)
 {
 	int border = n-1;  //一趟循环中可能需要交换的元素的边界
